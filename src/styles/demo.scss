@@ -1,0 +1,173 @@
+/*
+ * Styles for demo page at Github Pages
+ */
+
+
+/* config */
+$max-width: 960px;
+
+/* breakpoints use: @include breakpoint(xs); */ 
+$breakpoint-small: 767px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 960px;
+
+/* colors */
+$color-background: #f5f5f5;
+$color-primary: #F99811;
+$color-secondairy: #E84C0C;
+$color-text-primary: #f1f1f1;
+$color-text-secondairy: #222;
+
+/* import dependencies */
+@import "initialize";
+@import "helpers/breakpoints";
+
+/* extends */
+%wrapper {
+    padding: 0 2em;
+    margin: 0 auto;
+    max-width: $max-width;
+    position: relative;
+}
+
+/* demo page styling */
+body {
+    background: $color-background;
+    color: $color-text-secondairy;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $color-secondairy;
+    margin-bottom: 0.25em;
+
+    & + p {
+        margin-top: 0;
+    }
+}
+
+a {
+    color: $color-primary;
+}
+
+code, pre {
+    background: white;
+    border-radius: 0.3em;
+    font-size: 0.8em;
+    margin-bottom: 1em;
+    padding: 1em 2em;
+}
+
+code {
+    display: inline-block;
+    margin: 1em 0;
+    padding: 0.75em 1.5em;
+}
+
+.browserupgrade {
+    background: #f1c40f;
+    color: #000000;
+    margin: 0;
+    padding: 0.5em 0;
+    text-align: center;
+
+    a {
+        color: inherit;
+    }
+}
+
+.header {
+    background: $color-primary;
+    padding: 2em 0;
+
+    @include breakpoint(md) {
+        padding: 4em 0;
+    }
+
+    &-wrapper {
+        @extend %wrapper;
+        display: flex;
+        justify-content: space-between;
+
+        @include breakpoint(sm) {
+            flex-wrap: wrap;
+        }
+    }
+
+    h1, h2 {
+        color: #f1f1f1;
+        font-family: 'Lato', sans-serif;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 2em;
+
+        @include breakpoint(md) {
+            font-size: 3em;
+        }
+    }
+
+    h2 {
+        font-weight: normal;
+
+        @include breakpoint(sm) {
+            font-size: 1.3em;
+        }
+    }
+
+    .header-content {
+        padding-right: 4em;
+
+        @include breakpoint(sm) {
+            margin-bottom: 2em;
+        }
+    }
+
+    .header-buttons {
+
+        .header-button {
+            background: $color-secondairy;
+            border-radius: 0.3em;
+            color: white;
+            display: block;
+            text-decoration: none;
+            padding: 1em;
+            text-align: center;
+            width: 10em;
+        }
+
+        .header-button:first-child {
+            margin-bottom: 2em;
+        }
+    }
+}
+
+.main {
+    @extend %wrapper;
+    padding-top: 1em;
+
+    .intro {
+        font-size: 1.2em;
+        margin-bottom: 2em;
+
+        @include breakpoint(lg) {
+            max-width: 80%;
+        }
+    }
+}
+
+.footer {
+    background: $color-secondairy;
+    color: $color-text-primary;
+    padding: 2em 0;
+
+    &-wrapper {
+        @extend %wrapper;
+    }
+
+    a {
+        color: $color-text-primary;
+    }
+}
