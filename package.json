@@ -1,7 +1,8 @@
 {
   "name": "initialize-css",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "http://jeroenoomsnl.github.io/initialize-css/",
+  "description": "Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.",
   "author": {
     "name": "Jeroen Ooms",
     "email": "info@jeroenooms.nl",

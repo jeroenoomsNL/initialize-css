@@ -1,25 +1,37 @@
 /*
- * Initialize.css is a complete collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
+ * Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
  * http://jeroenoomsnl.github.io/initialize-css
  *
  * HTML5 Boilerplate: https://github.com/h5bp/html5-boilerplate
  * Normalize.css: http://github.com/necolas/normalize.css
  */
 
-$initialize-color: #000 !default;
+//
+// Predefined values
+//
 $initialize-font-family: sans-serif !default;
 $initialize-font-size: 1em !default;
 $initialize-line-height: 1.4 !default;
 
-$initialize-heading-font-family: $initialize-font-family !default;
-$initialize-heading-color: #000 !default;
+//
+// Optional values
+//
+$initialize-color: #000 !default;
+$initialize-heading-color: null !default;
 $initialize-heading-margins: 1em 0 0.75em;
-
+$initialize-heading-font-family: null !default;
 $initialize-block-margins: 0 0 0.75em;
 
 
+@mixin optional-prop($property, $value) {
+  @if $value != null {
+    #{$property}: $value;
+  }
+}
+
 html {
-  color: $initialize-color;
+  @include optional-prop('color', $initialize-color);
+
   font-family: $initialize-font-family;
   line-height: $initialize-line-height;
   font-size: $initialize-font-size;
@@ -272,11 +284,11 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $initialize-heading-color;
-  font-family: $initialize-heading-font-family;
-  margin: $initialize-heading-margins;
+  @include optional-prop('color', $initialize-heading-color);
+  @include optional-prop('margin', $initialize-heading-margins);
+  @include optional-prop('font-family', $initialize-heading-font-family);
 }
 
 p, table, ul, ol {
-  margin: $initialize-block-margins;
+  @include optional-prop('margin', $initialize-block-margins);
 }
