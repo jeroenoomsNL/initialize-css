@@ -22,6 +22,7 @@ with browserify:
 
 Overwrite default values for generic typography:
 ```
+$initialize-box-sizing: border-box;
 $initialize-font-family: sans-serif;
 $initialize-font-size: 1em;
 $initialize-line-height: 1.4;
