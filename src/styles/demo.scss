@@ -18,9 +18,11 @@ $color-text-primary: #f1f1f1;
 $color-text-secondairy: #222;
 
 // initilize overwrites
+$initialize-block-margins: 0 0 0.75em;
 $initialize-color: $color-text-secondairy;
-$initialize-heading-font-family: 'Lato', sans-serif;
 $initialize-heading-color: $color-secondairy;
+$initialize-heading-font-family: 'Lato', sans-serif;
+$initialize-heading-margins: 1em 0 0.75em;
 
 // import dependencies
 @import "initialize";

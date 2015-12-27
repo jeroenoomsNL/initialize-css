@@ -1,16 +1,41 @@
-# initialize-css
-This project is based on the [Github Project Starter](https://github.com/jeroenoomsNL/github-project-starter). 
+# Initialize.css
+Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
 
-## 
+## Usage
 
-Build with Gulp
-`gulp build`
+npm:
+```bash
+npm install initialize-css
+```
 
-Watch locally
-`gulp watch`
+sass / scss:
+```
+@import: "node_modules/initialize-css/initialize";
+```
 
-Deploy to Github Pages
-`gulp deploy`
-or
-`gulp deploy --message 'My first commit'`
+with browserify:
+```
+@import: "initialize";
+```
 
+## Configure
+
+Overwrite default values for generic typography:
+```
+$initialize-box-sizing: border-box;
+$initialize-font-family: sans-serif;
+$initialize-font-size: 1em;
+$initialize-line-height: 1.4;
+```
+
+Optional values:
+```
+$initialize-color: #000;
+$initialize-block-margins: 0 0 0.75em;
+```
+
+```
+$initialize-heading-color: #000;
+$initialize-heading-font-family: sans-serif;
+$initialize-heading-margins: 1em 0 0.75em;
+```

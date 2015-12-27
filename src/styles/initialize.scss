@@ -9,6 +9,7 @@
 //
 // Predefined values
 //
+$initialize-box-sizing: border-box !default;
 $initialize-font-family: sans-serif !default;
 $initialize-font-size: 1em !default;
 $initialize-line-height: 1.4 !default;
@@ -16,12 +17,11 @@ $initialize-line-height: 1.4 !default;
 //
 // Optional values
 //
-$initialize-color: #000 !default;
+$initialize-color: null !default;
 $initialize-heading-color: null !default;
-$initialize-heading-margins: 1em 0 0.75em;
+$initialize-heading-margins: null !default;
 $initialize-heading-font-family: null !default;
-$initialize-block-margins: 0 0 0.75em;
-
+$initialize-block-margins: null !default;
 
 @mixin optional-prop($property, $value) {
   @if $value != null {
@@ -31,12 +31,17 @@ $initialize-block-margins: 0 0 0.75em;
 
 html {
   @include optional-prop('color', $initialize-color);
+  @include optional-prop('box-sizing', $initialize-box-sizing);
 
   font-family: $initialize-font-family;
   line-height: $initialize-line-height;
   font-size: $initialize-font-size;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -147,7 +152,7 @@ figure {
 }
 
 hr {
-  box-sizing: content-box;
+  box-sizing: inherit;
   height: 0;
 }
 
@@ -207,7 +212,7 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  box-sizing: inherit;
   padding: 0;
 }
 
@@ -218,7 +223,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  box-sizing: content-box;
+  box-sizing: inherit;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
