@@ -19,9 +19,9 @@ $color-text-primary: #f1f1f1;
 $color-text-secondairy: #222;
 
 /* initilize overwrites */
-$initialize-font-family-headings: 'Lato', sans-serif;
-$inititalize-color: $color-text-secondairy;
-$inititalize-color-headings: $color-secondairy;
+$initialize-color: $color-text-secondairy;
+$initialize-heading-font-family: 'Lato', sans-serif;
+$initialize-heading-color: $color-secondairy;
 
 /* import dependencies */
 @import "initialize";
@@ -152,6 +152,7 @@ code {
 .footer {
     background: $color-secondairy;
     color: $color-text-primary;
+    margin-top: 2em;
     padding: 2em 0;
 
     &-wrapper {

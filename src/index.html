@@ -33,7 +33,7 @@
         </header>
 
         <main class="main">
-            <p class="intro">Initialize.css is a complete collection of CSS best practices based on <a href="http://github.com/necolas/normalize.css">Normalize.css</a> and <a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a>.  </p>
+            <p class="intro">Initialize.css is a complete collection of CSS best practices based on <a href="http://github.com/necolas/normalize.css">Normalize.css</a> and <a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a>.</p>
 
             <h2>Usage</h2>
             <p>
@@ -42,29 +42,32 @@
             </p>
             <p>
                 <strong>sass / scss</strong><br>
-                <code>@import: "initialize-css";</code>
+                <code>@import: "node_modules/initialize-css/initialize";</code>
+            </p>
+            <p>
+                <strong>with browserify</strong><br>
+                <code>@import: "initialize";</code>
             </p>
 
-            <h2>Demo</h2>
+            <h2>Configure</h2>
+            <p>Overwrite default values for generic typography:</p>
+<pre>
+$initialize-color: #000;
+$initialize-font-family: sans-serif;
+$initialize-font-size: 1em;
+$initialize-line-height: 1.4;
+</pre>
+            <p>Overwrite default values for headings:</p>
+<pre>            
+$initialize-heading-font-family: sans-serif;
+$initialize-heading-color: #000;
+$initialize-heading-margins: 1em 0 0.75em; 
+</pre>
+            <p>Overwrite default block margins like paragraphs, tables and lists:</p>
+<pre>
+$initialize-block-margins: 0 0 0.75em;
+</pre>
             
-            <h1>Heading 1</h1>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <h2>Heading 2</h2>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <h3>Heading 3</h3>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <h4>Heading 4</h4>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <h5>Heading 5</h5>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <h6>Heading 6</h6>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
-            <p>This is a paragraph lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, fuga rem possimus perferendis nihil facere itaque explicabo assumenda pariatur, velit blanditiis repellat officiis maiores est, obcaecati nostrum perspiciatis natus. Soluta.</p>
         </main>
     
         <footer class="footer">

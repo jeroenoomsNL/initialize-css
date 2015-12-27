@@ -49,14 +49,8 @@ gulp.task('styles', function () {
 });
 
 gulp.task('copy', function () {
-
-    var filter = $.filter(['initialize.scss']);
-
     return gulp.src(config.src.styles + '/**/initialize.*')
         .pipe($.plumber())
-        .pipe(gulp.dest(config.dist.base))
-        .pipe(filter)
-        .pipe($.rename({basename: 'initialize'}))
         .pipe(gulp.dest(config.dist.base))
         .pipe($.size({title: 'copy'}));
 });
@@ -73,7 +67,6 @@ gulp.task('clean', function (cb) {
 
 gulp.task('watch', ['build'], function () {
     browserSync.init({
-        reloadDelay: 100,
         server: {
             baseDir: './' + config.demo.base
         }
@@ -84,7 +77,7 @@ gulp.task('watch', ['build'], function () {
     gulp.watch([config.src.scripts + '/**/*.js'], ['scripts']);
     gulp.watch([config.src.base + '/**/*.html'], ['html']);
 
-    gulp.watch([config.demo.base + '/**/*', config.dist.base + '/**/*']).on('change', browserSync.reload);
+    browserSync.watch([config.demo.base + '/**/*', config.dist.base + '/**/*']).on('change', browserSync.reload);
 });
 
 gulp.task('build', ['styles', 'html', 'copy']);

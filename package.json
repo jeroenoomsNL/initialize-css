@@ -7,7 +7,7 @@
     "email": "info@jeroenooms.nl",
     "url": "http://jeroenooms.nl"
   },
-  "main": "dist/_initialize.scss",
+  "main": "dist/initialize.scss",
   "repository": "https://github.com/jeroenoomsNL/initialize-css.git",
   "devDependencies": {
     "browser-sync": "^2.10.1",
