@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" href="styles/demo.css">
-        <link rel="stylesheet" href="styles/app.css">
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -22,7 +21,7 @@
             <section class="header-wrapper">
                 <div class="header-content">
                     <h1>Initialize.css</h1>
-                    <h2>Initialize helps you  cross-browser best practices. Available in CSS and configurable SCSS format.</h2>
+                    <h2>Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.</h2>
                 </div>
                         
                 <div class="header-buttons">
@@ -33,7 +32,7 @@
         </header>
 
         <main class="main">
-            <p class="intro">Initialize.css is a complete collection of CSS best practices based on <a href="http://github.com/necolas/normalize.css">Normalize.css</a> and <a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a>.</p>
+            <p class="intro">Initialize.css is a complete collection of CSS best practices based on <a href="http://github.com/necolas/normalize.css">Normalize.css</a> and <a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a>. It's customizable with predefined and optional properties.</p>
 
             <h2>Usage</h2>
             <p>
@@ -52,20 +51,19 @@
             <h2>Configure</h2>
             <p>Overwrite default values for generic typography:</p>
 <pre>
-$initialize-color: #000;
+$initialize-box-sizing: border-box;
 $initialize-font-family: sans-serif;
 $initialize-font-size: 1em;
 $initialize-line-height: 1.4;
 </pre>
-            <p>Overwrite default values for headings:</p>
-<pre>            
-$initialize-heading-font-family: sans-serif;
-$initialize-heading-color: #000;
-$initialize-heading-margins: 1em 0 0.75em; 
-</pre>
-            <p>Overwrite default block margins like paragraphs, tables and lists:</p>
+            <p>Optional values:</p>
 <pre>
+$initialize-color: #000;
 $initialize-block-margins: 0 0 0.75em;
+
+$initialize-heading-color: #000;
+$initialize-heading-font-family: sans-serif;
+$initialize-heading-margins: 1em 0 0.75em; 
 </pre>
             
         </main>

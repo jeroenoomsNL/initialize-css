@@ -1,13 +1,8 @@
 /*
  * Styles for demo page at Github Pages
  */
-/* config */
-/* breakpoints use: @include breakpoint(xs); */
-/* colors */
-/* initilize overwrites */
-/* import dependencies */
 /*
- * Initialize.css is a complete collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
+ * Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
  * http://jeroenoomsnl.github.io/initialize-css
  *
  * HTML5 Boilerplate: https://github.com/h5bp/html5-boilerplate
@@ -15,11 +10,18 @@
  */
 html {
   color: #222;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   font-family: sans-serif;
   line-height: 1.4;
   font-size: 1em;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: inherit;
+       box-sizing: inherit;
 }
 
 body {
@@ -135,8 +137,8 @@ figure {
 }
 
 hr {
-  -moz-box-sizing: content-box;
-       box-sizing: content-box;
+  -moz-box-sizing: inherit;
+       box-sizing: inherit;
   height: 0;
 }
 
@@ -196,8 +198,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  -moz-box-sizing: inherit;
+       box-sizing: inherit;
   padding: 0;
 }
 
@@ -208,8 +210,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-       box-sizing: content-box;
+  -moz-box-sizing: inherit;
+       box-sizing: inherit;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -276,15 +278,14 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   color: #E84C0C;
-  font-family: "Lato", sans-serif;
   margin: 1em 0 0.75em;
+  font-family: "Lato", sans-serif;
 }
 
 p, table, ul, ol {
   margin: 0 0 0.75em;
 }
 
-/* extends */
 .header-wrapper, .main, .footer-wrapper {
   padding: 0 2em;
   margin: 0 auto;
@@ -292,7 +293,6 @@ p, table, ul, ol {
   position: relative;
 }
 
-/* demo page styling */
 body {
   background: #f5f5f5;
 }
