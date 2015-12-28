@@ -23,12 +23,18 @@ $initialize-heading-margins: null !default;
 $initialize-heading-font-family: null !default;
 $initialize-block-margins: null !default;
 
+//
+// Mixin for optional properties
+//
 @mixin optional-prop($property, $value) {
   @if $value != null {
     #{$property}: $value;
   }
 }
 
+//
+// General
+//
 html {
   @include optional-prop('color', $initialize-color);
   @include optional-prop('box-sizing', $initialize-box-sizing);
@@ -40,12 +46,12 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 body {
   margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 ::selection {
@@ -53,6 +59,9 @@ body {
     text-shadow: none;
 }
 
+//
+// HTML5 display defenitions
+//
 article,
 aside,
 details,
@@ -87,6 +96,9 @@ template {
   display: none;
 }
 
+//
+// Links
+//
 a {
   background-color: transparent;
 }
@@ -96,6 +108,9 @@ a:hover {
   outline: 0;
 }
 
+//
+// Text-level semantics
+//
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -139,6 +154,9 @@ sub {
   bottom: -0.25em;
 }
 
+//
+// Embedded content
+//
 img {
   border: 0;
 }
@@ -147,6 +165,9 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+//
+// Grouping content
+//
 figure {
   margin: 1em 40px;
 }
@@ -168,6 +189,9 @@ samp {
   font-size: 1em;
 }
 
+//
+// Forms
+//
 button,
 input,
 optgroup,
@@ -280,7 +304,6 @@ video {
 
 fieldset {
     border: 0;
-    margin: 0;
     padding: 0;
 }
 
@@ -288,12 +311,15 @@ textarea {
     resize: vertical;
 }
 
+//
+// Typography
+//
 h1, h2, h3, h4, h5, h6 {
   @include optional-prop('color', $initialize-heading-color);
   @include optional-prop('margin', $initialize-heading-margins);
   @include optional-prop('font-family', $initialize-heading-font-family);
 }
 
-p, table, ul, ol {
+p, table, ul, ol, fieldset, blockquote, dl {
   @include optional-prop('margin', $initialize-block-margins);
 }
