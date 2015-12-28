@@ -1,4 +1,5 @@
 dist/demo
 node_modules
 *.sass-cache
+.publish
 .DS_Store
