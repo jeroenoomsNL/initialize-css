@@ -1,16 +1,23 @@
 # Initialize.css
 Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
 
-## Usage
+## Install
 
 npm:
 ```bash
 npm install initialize-css
 ```
 
-sass / scss:
+bower:
+```bash
+bower install initialize-css
 ```
-@import: "node_modules/initialize-css/initialize";
+
+## Usage
+
+sass / scss (from node_modules or bower_components):
+```
+@import: "module_folder_name/initialize-css/initialize";
 ```
 
 with browserify:

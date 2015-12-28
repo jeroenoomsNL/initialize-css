@@ -12,15 +12,15 @@ $breakpoint-large: 960px;
 
 // colors
 $color-background: #f5f5f5;
-$color-primary: #F99811;
-$color-secondairy: #E84C0C;
-$color-text-primary: #f1f1f1;
-$color-text-secondairy: #222;
+$color-accent: #F99811;
+$color-accent-dark: #E84C0C;
+$color-text: #222;
+$color-text-accent: #f1f1f1;
 
 // initilize overwrites
 $initialize-block-margins: 0 0 0.75em;
-$initialize-color: $color-text-secondairy;
-$initialize-heading-color: $color-secondairy;
+$initialize-color: $color-text;
+$initialize-heading-color: $color-accent-dark;
 $initialize-heading-font-family: 'Lato', sans-serif;
 $initialize-heading-margins: 1em 0 0.75em;
 
@@ -42,7 +42,7 @@ body {
 }
 
 a {
-    color: $color-primary;
+    color: $color-accent;
 }
 
 code, pre {
@@ -71,7 +71,7 @@ code {
 }
 
 .header {
-    background: $color-primary;
+    background: $color-accent;
     padding: 2em 0;
 
     @include breakpoint(md) {
@@ -120,7 +120,7 @@ code {
     .header-buttons {
 
         .header-button {
-            background: $color-secondairy;
+            background: $color-accent-dark;
             border-radius: 0.3em;
             color: white;
             display: block;
@@ -155,8 +155,8 @@ code {
 }
 
 .footer {
-    background: $color-secondairy;
-    color: $color-text-primary;
+    background: $color-accent-dark;
+    color: $color-text-accent;
     margin-top: 2em;
     padding: 2em 0;
 
@@ -165,6 +165,6 @@ code {
     }
 
     a {
-        color: $color-text-primary;
+        color: $color-text-accent;
     }
 }
