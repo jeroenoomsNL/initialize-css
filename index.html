@@ -32,16 +32,22 @@
         </header>
 
         <main class="main">
-            <p class="intro">Initialize.css is a complete collection of CSS best practices based on <a href="http://github.com/necolas/normalize.css">Normalize.css</a> and <a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a>. It's customizable with predefined and optional properties.</p>
+            <p class="intro">Initialize.css is a complete collection of CSS best practices based on <a href="http://github.com/necolas/normalize.css">Normalize.css</a> and <a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a>. It's customizable with predefined and optional properties. Configuring Initialize.css reduces the amount of CSS selectors you need for initializing your project.</p>
 
-            <h2>Usage</h2>
+            <h2>Install</h2>
             <p>
                 <strong>npm</strong><br>
                 <code>npm install initialize-css</code>
             </p>
             <p>
-                <strong>sass / scss</strong><br>
-                <code>@import: "node_modules/initialize-css/initialize";</code>
+                <strong>bower</strong><br>
+                <code>bower install initialize-css</code>
+            </p>
+
+            <h2>Usage</h2>
+            <p>
+                <strong>sass / scss (from node_modules or bower_components)</strong><br>
+                <code>@import: "module_folder_name/initialize-css/dist/initialize";</code>
             </p>
             <p>
                 <strong>with browserify</strong><br>
