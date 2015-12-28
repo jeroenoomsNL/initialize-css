@@ -15,6 +15,11 @@ $initialize-font-size: 1em !default;
 $initialize-line-height: 1.4 !default;
 
 //
+// Options
+//
+$initialize-dinosaur-mode: true !default; // toggle support for IE8 & IE9
+
+//
 // Optional values
 //
 $initialize-color: null !default;
@@ -62,27 +67,42 @@ body {
 //
 // HTML5 display defenitions
 //
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
+@if $initialize-dinosaur-mode == true {
+  // Correct `block` display not defined for any HTML5 element in IE 8/9.
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  menu,
+  nav,
+  section,
+  summary {
+    display: block;
+  }
+} @else {
+  // Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+  // Correct `block` display not defined for `main` in IE 11.
+  details,
+  main,
+  summary {
+    display: block;
+  }
 }
 
 audio,
 canvas,
 progress,
 video {
-  display: inline-block;
+  // Correct `inline-block` display not defined in IE 8/9.
+  @if $initialize-dinosaur-mode == true {
+    display: inline-block;
+  }
+  // Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
   vertical-align: baseline;
 }
 
@@ -129,9 +149,12 @@ h1 {
   margin: 0.67em 0;
 }
 
-mark {
-  background: #ff0;
-  color: #000;
+@if $initialize-dinosaur-mode == true {
+  // Address styling not present in IE 8/9.
+  mark {
+    background: #ff0;
+    color: #000;
+  }
 }
 
 small {
