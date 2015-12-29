@@ -46,3 +46,8 @@ $initialize-heading-color: #000;
 $initialize-heading-font-family: sans-serif;
 $initialize-heading-margins: 1em 0 0.75em;
 ```
+
+If you don't have to support old dinosaur browsers like IE8 &amp; IE9, just set dinosaur mode to false. Less code!!
+```
+$initialize-dinosaur-mode: false;
+```
