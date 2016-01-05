@@ -1,5 +1,5 @@
 # Initialize.css
-Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
+Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate. Available in CSS and configurable SASS (SCSS) format.
 
 ## Install
 

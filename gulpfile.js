@@ -49,7 +49,8 @@ gulp.task('styles', function () {
 });
 
 gulp.task('copy', function () {
-    return gulp.src(config.src.styles + '/_initialize.scss')
+    return gulp.src(config.src.styles + '/initialize.scss')
+        .pipe($.rename({basename: '_initialize'}))
         .pipe(gulp.dest(config.dist.base))
         .pipe($.size({title: 'copy'}));
 });
