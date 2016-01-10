@@ -35,6 +35,11 @@ $initialize-font-size: 1em;
 $initialize-line-height: 1.4;
 ```
 
+Microsoft [dropped support](https://www.microsoft.com/en-us/WindowsForBusiness/End-of-IE-support) for IE8, IE9 & IE10. If you still have to support these old dinosaur browsers, just set dinosaur mode to true.
+```
+$initialize-dinosaur-mode: true;
+```
+
 Optional values:
 ```
 $initialize-color: #000;
@@ -45,9 +50,4 @@ $initialize-block-margins: 0 0 0.75em;
 $initialize-heading-color: #000;
 $initialize-heading-font-family: sans-serif;
 $initialize-heading-margins: 1em 0 0.75em;
-```
-
-If you don't have to support old dinosaur browsers like IE8 &amp; IE9, just set dinosaur mode to false. Less code!!
-```
-$initialize-dinosaur-mode: false;
 ```

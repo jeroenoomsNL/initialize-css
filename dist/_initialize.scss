@@ -17,7 +17,7 @@ $initialize-line-height: 1.4 !default;
 //
 // Options
 //
-$initialize-dinosaur-mode: true !default; // toggle support for IE8 & IE9
+$initialize-dinosaur-mode: false !default; // toggle support for IE8, IE9 & IE10
 
 //
 // Optional values
@@ -119,8 +119,12 @@ template {
 //
 // Links
 //
-a {
-  background-color: transparent;
+
+// Remove the gray background color from active links in IE 10.
+@if $initialize-dinosaur-mode == true {
+  a {
+    background-color: transparent;
+  }
 }
 
 a:active,

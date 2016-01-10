@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Initialize.css - A complete and customizable collection of CSS best practices</title>
-        <meta name="description" content="">
+        <meta name="description" content="Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate. Available in CSS and configurable SASS (SCSS) format">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="styles/demo.css">
     </head>
     <body>
-        <!--[if lt IE 10]>
+        <!--[if lte IE 10]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and your life.</p>
         <![endif]-->
 
@@ -21,7 +21,7 @@
             <section class="header-wrapper">
                 <div class="header-content">
                     <h1>Initialize.css</h1>
-                    <h2>Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.  Available in CSS and configurable SASS (SCSS) format.</h2>
+                    <h2>Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate. Available in CSS and configurable SASS (SCSS) format.</h2>
                 </div>
                         
                 <div class="header-buttons">
@@ -66,6 +66,12 @@ $initialize-font-family: sans-serif;
 $initialize-font-size: 1em;
 $initialize-line-height: 1.4;
 </pre>
+
+            <p>Microsoft <a href="https://www.microsoft.com/en-us/WindowsForBusiness/End-of-IE-support" target="_blank">dropped support</a> for IE8, IE9 &amp; IE10. If you still have to support these old dinosaur browsers, just set <em>dinosaur mode</em> to true.</p>
+<pre>
+$initialize-dinosaur-mode: true;
+</pre>
+
             <p>Optional values:</p>
 <pre>
 $initialize-color: #000;
@@ -76,10 +82,7 @@ $initialize-heading-font-family: sans-serif;
 $initialize-heading-margins: 1em 0 0.75em; 
 </pre>
 
-            <p>If you don't have to support old dinosaur browsers like IE8 &amp; IE9, just set <em>dinosaur mode</em> to false. Less code!!</p>
-<pre>
-$initialize-dinosaur-mode: false;
-</pre>
+
             
         </main>
     
