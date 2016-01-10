@@ -34,18 +34,8 @@ body {
   text-shadow: none;
 }
 
-article,
-aside,
 details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
 main,
-menu,
-nav,
-section,
 summary {
   display: block;
 }
@@ -54,7 +44,6 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block;
   vertical-align: baseline;
 }
 
@@ -66,10 +55,6 @@ audio:not([controls]) {
 [hidden],
 template {
   display: none;
-}
-
-a {
-  background-color: transparent;
 }
 
 a:active,
@@ -93,11 +78,6 @@ dfn {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
-}
-
-mark {
-  background: #ff0;
-  color: #000;
 }
 
 small {
