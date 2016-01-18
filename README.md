@@ -51,3 +51,7 @@ $initialize-heading-color: #000;
 $initialize-heading-font-family: sans-serif;
 $initialize-heading-margins: 1em 0 0.75em;
 ```
+
+```
+$initialize-print-styles: true;
+```
