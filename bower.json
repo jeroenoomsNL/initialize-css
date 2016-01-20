@@ -1,11 +1,11 @@
 {
   "name": "initialize-css",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "homepage": "http://jeroenoomsnl.github.io/initialize-css/",
   "authors": [
     "Jeroen Ooms (@jeroenooms)"
   ],
-  "description": "Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate. Available in CSS and configurable SASS (SCSS) format.",
+  "description": "Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate. Available in CSS and configurable SASS (SCSS) and LESS format.",
   "main": "dist/_initialize.scss",
   "moduleType": [],
   "keywords": [
