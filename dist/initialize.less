@@ -1,0 +1,427 @@
+/*
+ * Initialize.css (v1.2.0) is a complete and customizable collection 
+ * of CSS best practices based on Normalize.css and HTML5 Boilerplate.
+ * http://jeroenoomsnl.github.io/initialize-css
+ *
+ * HTML5 Boilerplate: https://github.com/h5bp/html5-boilerplate
+ * Normalize.css: http://github.com/necolas/normalize.css
+ */
+
+//
+// Predefined values
+//
+@initialize-box-sizing: border-box;
+@initialize-font-family: sans-serif;
+@initialize-font-size: 1em;
+@initialize-line-height: 1.4;
+
+//
+// Options
+//
+@initialize-dinosaur-mode: false; // toggle support for IE8, IE9 & IE10
+@initialize-print-styles: false; // toggle HTML5 Boilerplate print styles
+
+//
+// Optional values
+//
+@initialize-color: false;
+@initialize-heading-color: false;
+@initialize-heading-margins: false;
+@initialize-heading-font-family: false;
+@initialize-block-margins: false;
+
+//
+// Mixin for optional properties
+//
+.optional-prop(@property, @value) when (isstring(@value)), (iscolor(@value)), (isnumber(@value)) {
+  @{property}: @value;
+}
+
+//
+// General
+//
+html {
+  .optional-prop(color, @initialize-color);
+  .optional-prop(box-sizing, @initialize-box-sizing);
+
+  font-family: @initialize-font-family;
+  line-height: @initialize-line-height;
+  font-size: @initialize-font-size;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+//
+// HTML5 display defenitions
+//
+
+// Correct `block` display not defined for any HTML5 element in IE 8/9.
+.html5-display-old(@initialize-dinosaur-mode) when (@initialize-dinosaur-mode = true) {
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  menu,
+  nav,
+  section,
+  summary {
+    display: block;
+  }
+}
+.html5-display-old(@initialize-dinosaur-mode);
+
+// Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+// Correct `block` display not defined for `main` in IE 11.
+.html5-display-new(@initialize-dinosaur-mode) when (@initialize-dinosaur-mode = true) {
+  details,
+  main,
+  summary {
+    display: block;
+  }
+}
+.html5-display-new(@initialize-dinosaur-mode);
+
+
+audio,
+canvas,
+progress,
+video {
+  // Correct `inline-block` display not defined in IE 8/9.
+  & when (@initialize-dinosaur-mode = true)  {
+    display: inline-block;
+  }
+
+  // Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+//
+// Links
+//
+
+// Remove the gray background color from active links in IE 10.
+a when (@initialize-dinosaur-mode = true) {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+//
+// Text-level semantics
+//
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+// Address styling not present in IE 8/9.
+mark when (@initialize-dinosaur-mode = true) {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+//
+// Embedded content
+//
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+//
+// Grouping content
+//
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: inherit;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+//
+// Forms
+//
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: inherit;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: inherit;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+//
+// Typography
+//
+h1, h2, h3, h4, h5, h6 {
+  .optional-prop(color, @initialize-heading-color);
+  .optional-prop(margin, @initialize-heading-margins);
+  .optional-prop(font-family, @initialize-heading-font-family);
+}
+
+p, table, ul, ol, fieldset, blockquote, dl {
+  .optional-prop(margin, @initialize-block-margins);
+}
+
+//
+// Print styles
+//
+.print-styles(@initialize-print-styles) when (@initialize-print-styles = true) {
+  @media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+      background: transparent !important;
+      color: #000 !important; // Black prints faster: http://www.sanbeiji.com/archives/953
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+
+    // Don't show links that are fragment identifiers,
+    // or use the `javascript:` pseudo protocol
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+      content: "";
+    }
+
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+
+    // Printing Tables:
+    // http://css-discuss.incutio.com/wiki/Printing_Tables
+    thead {
+      display: table-header-group;
+    }
+
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+
+    img {
+      max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+  }
+}
+.print-styles(@initialize-print-styles);
