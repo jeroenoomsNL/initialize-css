@@ -32,6 +32,17 @@
     "jshint-stylish": "^2.1.0",
     "rimraf": "^2.4.4"
   },
+  "keywords": [
+    "css",
+    "scss",
+    "sass",
+    "less",
+    "initialize",
+    "boilerplate",
+    "normalize",
+    "reset",
+    "typography"
+  ],
   "license": "MIT",
   "engines": {
     "node": ">=4.1.1",

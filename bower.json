@@ -12,6 +12,7 @@
     "css",
     "scss",
     "sass",
+    "less",
     "initialize",
     "boilerplate",
     "normalize",
