@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.3.1
+
+* Update files in dist folder
+* Move changelog file to root
+
 ## v1.3.0
 
 **Fixed bugs**
@@ -21,15 +26,12 @@
 
 ## v1.2.0
 
-**Improvements**
 * Add LESS support
 
 ## v1.1.0
 
-**Improvements**
 * Add optional print styles (based on HTML5 Boilerplate)
 
 ## v1.0.0
 
-**Improvements**
 * Add IE10 to "dinosaur mode" and set it to "false" by default
