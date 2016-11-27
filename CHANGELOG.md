@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.2
+
+* Fix validation issues for .optional-prop mixin in Less version.
+
 ## v1.3.1
 
 * Update files in dist folder

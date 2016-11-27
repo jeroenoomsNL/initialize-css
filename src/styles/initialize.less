@@ -1,5 +1,5 @@
 /*!
- * Initialize.css (v1.3.1) is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
+ * Initialize.css (v1.3.2) is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
  * http://jeroenoomsnl.github.io/initialize-css
  *
  * HTML5 Boilerplate: https://github.com/h5bp/html5-boilerplate
@@ -9,7 +9,7 @@
 
 // ==========================================================================
 // Config
-// ========================================================================== 
+// ==========================================================================
 
 //
 // Predefined values
@@ -38,12 +38,12 @@
 
 // ==========================================================================
 // Helpers
-// ========================================================================== 
+// ==========================================================================
 
 //
 // Mixin for optional properties
 //
-.optional-prop(@property, @value) when (isstring(@value)), (iscolor(@value)), (isnumber(@value)) {
+.optional-prop(@property, @value) when not(@value=null) {
   @{property}: @value;
 }
 
@@ -517,7 +517,7 @@ optgroup {
 
 
 /* ==========================================================================
-   HTML5 Boilerplate optimizations 
+   HTML5 Boilerplate optimizations
    ========================================================================== */
 
 /*
