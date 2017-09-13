@@ -200,7 +200,7 @@ a:hover {
    ========================================================================== */
 
 /**
- * 1. Remove the bottom border in Firefox 39-.
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 
@@ -247,14 +247,14 @@ h1 {
 }
 
 @if $initialize-dinosaur-mode == true {
-  /**
-  * Address styling not present in IE 8/9.
-  */
+    /*
+     * Address styling not present in IE 8/9.
+     */
 
-  mark {
-    background: #ff0;
-    color: #000;
-  }
+    mark {
+        background: #ff0;
+        color: #000;
+    }
 }
 
 
@@ -317,9 +317,8 @@ svg:not(:root) {
    Grouping content
    ========================================================================== */
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
+/*
+ * Address margin not present in IE 8/9 and Safari.
  */
 
 code,
