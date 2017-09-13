@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.4.0
+
+* Update LESS version, was out of sync
+* Update with Normalize.css v7.0.0
+
 ## v1.3.2
 
 * Fix validation issues for .optional-prop mixin in Less version.
