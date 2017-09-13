@@ -58,7 +58,7 @@ $initialize-block-margins: null !default;
 
 /**
  * 1. Set default font family to $initialize-font-family (default: sans-serif)
- * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ * 2. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
  * 3. Configurable defaults
  */
 
@@ -114,16 +114,21 @@ body {
   main, /* 2 */
   menu,
   nav,
-  section,
-  summary /* 1 */ {
+  section {
     display: block;
   }
 } @else {
   details, /* 1 */
-  main,  /* 2 */
-  summary /* 1 */ {
+  main /* 2 */ {
     display: block;
   }
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+     display: list-item;
 }
 
 @if $initialize-dinosaur-mode == true {
@@ -133,7 +138,6 @@ body {
 
     audio,
     canvas,
-    progress,
     video {
         display: inline-block;
     }
@@ -144,16 +148,8 @@ body {
  */
 
 audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-    vertical-align: baseline;
+    display: none;
+    height: 0;
 }
 
 /**
@@ -176,6 +172,7 @@ template, /* 1 */
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
+
 a {
     @if $initialize-dinosaur-mode == true {
         background-color: transparent; /* 1 */
@@ -200,7 +197,7 @@ a:hover {
    ========================================================================== */
 
 /**
- * 1. Remove the bottom border in Firefox 39-.
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 
@@ -247,14 +244,14 @@ h1 {
 }
 
 @if $initialize-dinosaur-mode == true {
-  /**
-  * Address styling not present in IE 8/9.
-  */
+    /*
+     * Address styling not present in IE 8/9.
+     */
 
-  mark {
-    background: #ff0;
-    color: #000;
-  }
+    mark {
+        background: #ff0;
+        color: #000;
+    }
 }
 
 
@@ -317,9 +314,8 @@ svg:not(:root) {
    Grouping content
    ========================================================================== */
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
+/*
+ * Address margin not present in IE 8/9 and Safari.
  */
 
 code,
@@ -356,7 +352,7 @@ hr {
    ========================================================================== */
 
 /**
- * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 1. Change the font styles in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
 
@@ -364,16 +360,10 @@ button,
 input,
 select,
 textarea {
-    font: inherit; /* 1 */
+    font-family: $initialize-font-family; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: $initialize-line-height; /* 1 */
     margin: 0; /* 2 */
-}
-
-/**
- * Restore the font weight unset by the previous rule.
- */
-
-optgroup {
-    font-weight: bold;
 }
 
 /**
@@ -434,12 +424,10 @@ button:-moz-focusring,
 
 @if $initialize-html5-boilerplate-overwrites == false {
     /**
-     * Change the border, margin, and padding in all browsers (opinionated).
-     */
+    * Correct the padding in Firefox.
+    */
 
     fieldset {
-        border: 1px solid #c0c0c0;
-        margin: 0 2px;
         padding: 0.35em 0.625em 0.75em;
     }
 }
@@ -458,6 +446,16 @@ legend {
     max-width: 100%; /* 1 */
     padding: 0; /* 3 */
     white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
 }
 
 /**
@@ -501,21 +499,12 @@ textarea {
 }
 
 /**
- * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
  */
 
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
-}
-
-/**
- * Correct the text style of placeholders in Chrome, Edge, and Safari.
- */
-
-::-webkit-input-placeholder {
-    color: inherit;
-    opacity: 0.54;
 }
 
 /**

@@ -92,47 +92,52 @@ body {
    HTML5 display defenitions
    ========================================================================== */
 
-/*
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
- * and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
  */
+
 .html5-display-old(@initialize-dinosaur-mode) when (@initialize-dinosaur-mode = true) {
   article,
   aside,
-  details,
+  details, /* 1 */
   figcaption,
   figure,
   footer,
   header,
   hgroup,
-  main,
+  main, /* 2 */
   menu,
   nav,
-  section,
-  summary {
+  section {
     display: block;
   }
 }
 .html5-display-old(@initialize-dinosaur-mode);
 
 .html5-display-new(@initialize-dinosaur-mode) when (@initialize-dinosaur-mode = true) {
-  details,
-  main,
-  summary {
+  details, /* 1 */
+  main /* 2 */ {
     display: block;
   }
 }
 .html5-display-new(@initialize-dinosaur-mode);
 
 /*
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ * Add the correct display in all browsers.
  */
+
+ summary {
+  display: list-item;
+}
+
+/*
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
 audio,
 canvas,
-progress,
 video {
   & when (@initialize-dinosaur-mode = true)  {
     display: inline-block; /* 1 */
@@ -144,6 +149,7 @@ video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
+
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -153,6 +159,7 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
  */
+
 [hidden],
 template {
   display: none;
@@ -167,6 +174,7 @@ template {
 /*
  * Remove the gray background color from active links in IE 10.
  */
+
 a when (@initialize-dinosaur-mode = true) {
   background-color: transparent;
 }
@@ -175,6 +183,7 @@ a when (@initialize-dinosaur-mode = true) {
  * Improve readability of focused elements when they are also in an
  * active/hover state.
  */
+
 a:active,
 a:hover {
   outline: 0;
@@ -186,11 +195,11 @@ a:hover {
    Text-level semantics
    ========================================================================== */
 
-/*
- * Address inconsistent styling of `abbr[title]`.
- * 1. Correct styling in Firefox 39 and Opera 12.
- * 2. Correct missing styling in Chrome, Edge, IE, Opera, and Safari.
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
+
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
@@ -201,19 +210,19 @@ abbr[title] {
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
 
- b,
- strong {
-     font-weight: inherit;
- }
- 
- /**
-  * Add the correct font weight in Chrome, Edge, and Safari.
-  */
- 
- b,
- strong {
-     font-weight: bolder;
- }
+b,
+strong {
+    font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+    font-weight: bolder;
+}
 
 /**
  * Add the correct font style in Android 4.3-.
@@ -337,7 +346,7 @@ hr {
    ========================================================================== */
 
 /**
- * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 1. Change the font styles in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
 
@@ -345,18 +354,12 @@ hr {
  input,
  select,
  textarea {
-     font: inherit; /* 1 */
+     font-family: @initialize-font-family; /* 1 */
+     font-size: 100%; /* 1 */
+     line-height: @initialize-line-height; /* 1 */
      margin: 0; /* 2 */
  }
- 
- /**
-  * Restore the font weight unset by the previous rule.
-  */
- 
- optgroup {
-     font-weight: bold;
- }
- 
+
  /**
   * Show the overflow in IE.
   * 1. Show the overflow in Edge.
@@ -415,13 +418,11 @@ hr {
 
  .fieldset(@initialize-html5-boilerplate-overwrites) when (@initialize-html5-boilerplate-overwrites = true) {
   /**
-   * Change the border, margin, and padding in all browsers (opinionated).
+   * Correct the padding in Firefox.
    */
 
   fieldset {
-      border: 1px solid #c0c0c0;
-      margin: 0 2px;
-      padding: 0.35em 0.625em 0.75em;
+    padding: 0.35em 0.625em 0.75em;
   }
 }
 .fieldset(@initialize-html5-boilerplate-overwrites);
@@ -440,6 +441,16 @@ legend {
   max-width: 100%; /* 1 */
   padding: 0; /* 3 */
   white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
 }
 
 /**
@@ -484,21 +495,12 @@ textarea {
 }
 
 /**
-* Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+* Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
 */
 
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
-}
-
-/**
-* Correct the text style of placeholders in Chrome, Edge, and Safari.
-*/
-
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
 }
 
 /**
