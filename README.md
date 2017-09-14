@@ -17,12 +17,12 @@ bower install initialize-css
 
 sass / scss (from node_modules or bower_components):
 ```
-@import: "module_folder_name/initialize-css/dist/initialize";
+@import "module_folder_name/initialize-css/dist/initialize";
 ```
 
 with browserify:
 ```
-@import: "initialize";
+@import "initialize";
 ```
 
 ## Configure
