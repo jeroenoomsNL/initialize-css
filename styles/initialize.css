@@ -1,89 +1,166 @@
-/*
- * Initialize.css (v1.2.0) is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
+/*!
+ * Initialize.css (v1.4.0) is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.
  * http://jeroenoomsnl.github.io/initialize-css
  *
  * HTML5 Boilerplate: https://github.com/h5bp/html5-boilerplate
  * Normalize.css: http://github.com/necolas/normalize.css
  */
+/* ==========================================================================
+   General
+   ========================================================================== */
+/**
+ * 1. Set default font family to $initialize-font-family (default: sans-serif)
+ * 2. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
+ * 3. Configurable defaults
+ */
 html {
   -moz-box-sizing: border-box;
        box-sizing: border-box;
   font-family: sans-serif;
+  /* 1 */
   line-height: 1.4;
+  /* 3 */
   font-size: 1em;
+  /* 3 */
   -ms-text-size-adjust: 100%;
+  /* 2 */
   -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
+/**
+ * Remove the margin in all browsers
+ */
 body {
   margin: 0;
 }
 
+/**
+ * Inheriting box-sizing
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
 *, *:before, *:after {
   -moz-box-sizing: inherit;
        box-sizing: inherit;
 }
 
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
+/* ==========================================================================
+   HTML5 display defenitions
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
 details,
-main,
-summary {
+main {
   display: block;
 }
 
-audio,
-canvas,
-progress,
-video {
-  vertical-align: baseline;
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
 }
 
+/**
+ * Add the correct display in iOS 4-7.
+ */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-[hidden],
-template {
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+template,
+[hidden] {
   display: none;
 }
 
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
 a:active,
 a:hover {
-  outline: 0;
+  outline-width: 0;
 }
 
+/* ==========================================================================
+   Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
 abbr[title] {
-  border-bottom: 1px dotted;
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
 }
 
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
 b,
 strong {
-  font-weight: bold;
+  font-weight: inherit;
 }
 
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
 dfn {
   font-style: italic;
 }
 
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
+/**
+ * Add the correct font size in all browsers.
+ */
 small {
   font-size: 80%;
 }
 
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
 sub,
 sup {
   font-size: 75%;
@@ -92,161 +169,230 @@ sup {
   vertical-align: baseline;
 }
 
-sup {
-  top: -0.5em;
-}
-
 sub {
   bottom: -0.25em;
 }
 
-img {
-  border: 0;
+sup {
+  top: -0.5em;
 }
 
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Hide the overflow in IE.
+ */
 svg:not(:root) {
   overflow: hidden;
 }
 
-figure {
-  margin: 1em 40px;
-}
-
-hr {
-  -moz-box-sizing: inherit;
-       box-sizing: inherit;
-  height: 0;
-}
-
-pre {
-  overflow: auto;
-}
-
+/* ==========================================================================
+   Grouping content
+   ========================================================================== */
+/*
+ * Address margin not present in IE 8/9 and Safari.
+ */
 code,
 kbd,
 pre,
 samp {
   font-family: monospace, monospace;
+  /* 1 */
   font-size: 1em;
+  /* 2 */
 }
 
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  -moz-box-sizing: content-box;
+       box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
 button,
 input,
-optgroup,
 select,
 textarea {
-  color: inherit;
-  font: inherit;
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.4;
+  /* 1 */
   margin: 0;
+  /* 2 */
 }
 
-button {
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
   overflow: visible;
 }
 
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
 button,
 select {
+  /* 1 */
   text-transform: none;
 }
 
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html [type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
-  cursor: pointer;
+  /* 2 */
 }
 
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
+/**
+ * Remove the inner border and padding in Firefox.
+ */
 button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
   padding: 0;
 }
 
-input {
-  line-height: normal;
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  -moz-box-sizing: inherit;
-       box-sizing: inherit;
-  padding: 0;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-input[type="search"] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: inherit;
-       box-sizing: inherit;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
+/**
+* Correct the padding in Firefox.
+*/
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
 legend {
-  border: 0;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
   padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
 textarea {
   overflow: auto;
 }
 
-optgroup {
-  font-weight: bold;
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
-td,
-th {
-  padding: 0;
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-fieldset {
-  border: 0;
-  padding: 0;
-}
-
-textarea {
-  resize: vertical;
-}
+/* ==========================================================================
+   Optional configurations
+   ========================================================================== */
+/**
+ * Headings
+ */
+/**
+ * Block elements
+ */
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
