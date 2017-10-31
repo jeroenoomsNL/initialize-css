@@ -13,7 +13,7 @@ var config = {
         styles: 'src/styles'
     },
     dist: {
-        base: 'dist',
+        base: 'dist'
     },
     demo: {
         base: 'dist/demo',
@@ -27,15 +27,10 @@ gulp.task('styles', function () {
 
     var filter = $.filter(['initialize.*','!*.map']);
 
-    return $.rubySass(config.src.styles + '/*.scss', {
-            precision: 10,
-            sourcemap: false,
-            style: params.production ? 'compressed' : 'expanded',
-            loadPath: ['node_modules']
-        })
-        .on('error', function(error) {
-            console.log(error);
-        })
+    return gulp.src(config.src.styles + '/*.scss')
+        .pipe($.sass({
+            precision: 10
+        }))
         .pipe($.plumber())
         .pipe($.autoprefixer(config.autoprefixer))
         .pipe($.sourcemaps.write('.'))
