@@ -7,6 +7,7 @@
     "debug": false,
     "devel": false,
     "esnext": true,
+    "esversion": 6,
     "eqeqeq": true,
     "eqnull": false,
     "evil": false,
