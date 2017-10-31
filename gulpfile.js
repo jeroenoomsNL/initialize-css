@@ -58,7 +58,7 @@ gulp.task('styles.copy', ['styles'], () => {
 gulp.task('copy', () => {
     return gulp.src(config.src.styles + '/initialize.*')
         .pipe($.if('initialize.scss', $.rename({basename: '_initialize'})))
-        .pipe(gulp.dest(config.dist.base))
+        .pipe(gulp.dest(config.dist.base + '/src'))
         .pipe($.size({title: 'copy'}));
 });
 
