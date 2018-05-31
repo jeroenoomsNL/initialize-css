@@ -25,20 +25,11 @@ var config = {
 
 gulp.task('styles', function () {
 
-    var filter = $.filter(['initialize.*','!*.map']);
+    var filter = $.filter(['initialize.*']);
 
-    return $.rubySass(config.src.styles + '/*.scss', {
-            precision: 10,
-            sourcemap: false,
-            style: params.production ? 'compressed' : 'expanded',
-            loadPath: ['node_modules']
-        })
-        .on('error', function(error) {
-            console.log(error);
-        })
+    return sassProcess(config.src.styles + '/*.scss') 
         .pipe($.plumber())
         .pipe($.autoprefixer(config.autoprefixer))
-        .pipe($.sourcemaps.write('.'))
         .pipe(gulp.dest(config.demo.styles))
         .pipe(filter)
         .pipe(gulp.dest(config.dist.base))
@@ -47,6 +38,15 @@ gulp.task('styles', function () {
         .pipe(gulp.dest(config.dist.base))
         .pipe($.size({title: 'styles'}));
 });
+
+function sassProcess(path) {
+    return gulp.src(path)
+        .pipe($.sass({
+            precision: 10,
+            outputStyle: params.production ? 'compressed' : 'expanded',
+            includePaths: ['node_modules']
+        }).on('error', $.sass.logError));
+}
 
 gulp.task('copy', function () {
     return gulp.src(config.src.styles + '/initialize.*')
