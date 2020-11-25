@@ -1,47 +1,48 @@
 {
-  "name": "initialize-css",
-  "version": "1.4.0",
-  "homepage": "http://jeroenoomsnl.github.io/initialize-css/",
-  "description": "Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate. Available in CSS and configurable SASS (SCSS) and LESS format.",
-  "author": {
-    "name": "Jeroen Ooms",
-    "email": "info@jeroenooms.nl",
-    "url": "http://jeroenooms.nl"
-  },
-  "main": "dist/_initialize.scss",
-  "repository": "https://github.com/jeroenoomsNL/initialize-css.git",
-  "devDependencies": {
-    "browser-sync": "^2.18.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-filter": "^5.1.0",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-if": "^2.0.2",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-merge": "^0.1.1",
-    "gulp-plumber": "^1.2.0",
-    "gulp-rename": "^1.2.3",
-    "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-size": "^3.0.0",
-    "gulp-util": "^3.0.8",
-    "rimraf": "^2.6.2"
-  },
-  "keywords": [
-    "css",
-    "scss",
-    "sass",
-    "less",
-    "initialize",
-    "boilerplate",
-    "normalize",
-    "reset",
-    "typography"
-  ],
-  "license": "MIT",
-  "engines": {
-    "node": ">=4.1.1",
-    "npm": ">=3.3.4"
-  }
+	"name": "initialize-css",
+	"version": "2.0.0",
+	"homepage": "http://jeroenoomsnl.github.io/initialize-css/",
+	"description": "Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate. Available in CSS and configurable SASS (SCSS) and LESS format.",
+	"author": {
+		"name": "Jeroen Ooms",
+		"email": "info@jeroenooms.nl",
+		"url": "http://jeroenooms.nl"
+	},
+	"scripts": {
+		"build": "npm run build:sass && npm run build:autoprefix && npm run build:minify",
+		"build:sass": "sass styles/initialize.scss styles/initialize.css --no-source-map",
+		"build:autoprefix": "postcss styles/initialize.css --replace --use autoprefixer --no-map",
+		"build:minify": "postcss --use cssnano --output styles/initialize.min.css styles/initialize.css --no-map"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.0.2",
+		"cssnano": "^4.1.10",
+		"postcss": "^8.1.10",
+		"postcss-cli": "^8.3.0",
+		"sass": "^1.29.0"
+	},
+	"main": "styles/initialize.scss",
+	"repository": "https://github.com/jeroenoomsNL/initialize-css.git",
+	"keywords": [
+		"css",
+		"scss",
+		"sass",
+		"less",
+		"initialize",
+		"boilerplate",
+		"normalize",
+		"reset",
+		"typography"
+	],
+	"license": "MIT",
+	"engines": {
+		"node": "^10 || ^12 || >=14"
+	},
+	"browserslist": {
+		"autoprefixer": [
+			"last 2 versions",
+			"Explorer >= 8",
+			"Firefox >= 25"
+		]
+	}
 }

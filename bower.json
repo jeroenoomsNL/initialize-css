@@ -1,28 +1,22 @@
 {
-  "name": "initialize-css",
-  "version": "1.4.0",
-  "homepage": "http://jeroenoomsnl.github.io/initialize-css/",
-  "authors": [
-    "Jeroen Ooms (@jeroenooms)"
-  ],
-  "description": "Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate. Available in CSS and configurable SASS (SCSS) and LESS format.",
-  "main": "dist/_initialize.scss",
-  "moduleType": [],
-  "keywords": [
-    "css",
-    "scss",
-    "sass",
-    "less",
-    "initialize",
-    "boilerplate",
-    "normalize",
-    "reset",
-    "typography"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components"
-  ]
+	"name": "initialize-css",
+	"version": "2.0.0",
+	"homepage": "http://jeroenoomsnl.github.io/initialize-css/",
+	"authors": ["Jeroen Ooms (@jeroenooms)"],
+	"description": "Initialize.css is a complete and customizable collection of CSS best practices based on Normalize.css and HTML5 Boilerplate.",
+	"main": "styles/initialize.scss",
+	"moduleType": [],
+	"keywords": [
+		"css",
+		"scss",
+		"sass",
+		"less",
+		"initialize",
+		"boilerplate",
+		"normalize",
+		"reset",
+		"typography"
+	],
+	"license": "MIT",
+	"ignore": ["**/.*", "node_modules", "bower_components"]
 }
